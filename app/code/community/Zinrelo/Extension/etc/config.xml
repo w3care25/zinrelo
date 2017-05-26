@@ -21,57 +21,57 @@
 -->
 <config>
   <modules>
-    <Zinrelo_Tracker>
+    <Zinrelo_Extension>
       <version>1.0.0</version>
-    </Zinrelo_Tracker>
+    </Zinrelo_Extension>
   </modules>
   <global>
     <helpers>
-      <tracker>
-        <class>Zinrelo_Tracker_Helper</class>
-      </tracker>
+      <extension>
+        <class>Zinrelo_Extension_Helper</class>
+      </extension>
     </helpers>
 		<blocks>
-			<tracker>
-				<class>Zinrelo_Tracker_Block</class>
-			</tracker>
+			<extension>
+				<class>Zinrelo_Extension_Block</class>
+			</extension>
 		</blocks>
 		<resources>
-			<tracker_setup>
+			<extension_setup>
 				<setup>
 					<module>Zinrelo_Extension</module>
 				</setup>
 				<connection>
 					<use>core_setup</use>
 				</connection>
-			</tracker_setup>
-	  	<tracker_write>
+			</extension_setup>
+	  	<extension_write>
 				<connection>
 		  		<use>core_write</use>
 				</connection>
-	  	</tracker_write>
-	  	<tracker_read>
+	  	</extension_write>
+	  	<extension_read>
 				<connection>
 		  		<use>core_read</use>
 				</connection>
-	  	</tracker_read>
+	  	</extension_read>
 		</resources>
   </global>
 	<frontend>
 		<routers>
-			<tracker>
+			<extension>
 				<use>standard</use>
 				<args>
 					<module>Zinrelo_Extension</module>
-					<frontName>tracker</frontName>
+					<frontName>extension</frontName>
 				</args>
-			</tracker>
+			</extension>
 		</routers>
 		<layout>
 			<updates>
-				<tracker>
+				<extension>
 					<file>extension.xml</file>
-				</tracker>
+				</extension>
 			</updates>
 		</layout>
 	</frontend>

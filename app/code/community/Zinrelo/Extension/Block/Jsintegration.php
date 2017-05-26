@@ -24,7 +24,7 @@
 * @package  Zinrelo_Extension
 * @author   Zinrelo Developer <dev@zinrelo.com>
 */
-class Zinrelo_Tracker_Block_Successsnippet extends Mage_Checkout_Block_Success {
+class Zinrelo_Extension_Block_Jsintegration extends Mage_Core_Block_Template {
 
     /**
      * Check if Zinrelo tracking is enabled.
@@ -34,8 +34,6 @@ class Zinrelo_Tracker_Block_Successsnippet extends Mage_Checkout_Block_Success {
     public function isEnabled() {
         return Mage::getStoreConfig('extension/extension_settings/extension_active');
     }
-	
-	
 
    
 }

@@ -14,29 +14,29 @@
  * to license@Zinrelo.com so we can send you a copy immediately.
  *
  * @category   Zinrelo
- * @package    Zinrelo_tracker
+ * @package    Zinrelo_Extension
  * @copyright  Copyright (c) 2017 Zinrelo.
  * @license    http://opensource.org/licenses/gpl-license GNU General Public License
  */
 -->
 <config>
   <tabs>
-    <zinrelo_tracker translate="label" module="tracker">
-      <label>zinrelo tracker</label>
+    <zinrelo_extension translate="label" module="extension">
+      <label>zinrelo extension</label>
       <sort_order>301</sort_order>
-    </zinrelo_tracker>
+    </zinrelo_extension>
   </tabs>
   <sections>
-    <tracker  translate="label" module="tracker">
+    <extension  translate="label" module="extension">
       <label>Settings</label>
-      <tab>zinrelo_tracker</tab>
+      <tab>zinrelo_extension</tab>
       <frontend_type>text</frontend_type>
       <sort_order>1</sort_order>
       <show_in_default>1</show_in_default>
       <show_in_website>1</show_in_website>
       <show_in_store>1</show_in_store>
       <groups>
-        <tracker_settings translate="label">
+        <extension_settings translate="label">
           <label>Zinrelo Settings</label>
           <frontend_type>text</frontend_type>
           <sort_order>1</sort_order>
@@ -44,18 +44,18 @@
           <show_in_website>1</show_in_website>
           <show_in_store>1</show_in_store>
           <fields>
-			 <tracker_partner_id translate="label">
+			 <extension_partner_id translate="label">
               <label>Partner ID</label>
               <frontend_type>text</frontend_type>
 			  <depends>
-                <tracker_active>1</tracker_active>
+                <extension_active>1</extension_active>
               </depends>
               <sort_order>4</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
-            </tracker_partner_id>
-            <tracker_active translate="label">
+            </extension_partner_id>
+            <extension_active translate="label">
               <label>Enabled</label>
               <frontend_type>select</frontend_type>
               <source_model>adminhtml/system_config_source_yesno</source_model>
@@ -63,11 +63,11 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
-            </tracker_active>	
-			<data_tracker translate="label">
+            </extension_active>	
+			<data_extension translate="label">
               <label>Register store with Zinrelo</label>
               <frontend_type>button</frontend_type>
-              <frontend_model>tracker/adminhtml_system_config_button</frontend_model>
+              <frontend_model>extension/adminhtml_system_config_button</frontend_model>
               <sort_order>12</sort_order>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
@@ -75,10 +75,10 @@
               <comment>
                 <![CDATA[Click on this button to complete the rest of the program setup.]]>
 			  </comment>
-						</data_tracker>			
+						</data_extension>			
           </fields>
-        </tracker_settings>
+        </extension_settings>
       </groups>
-    </tracker>
+    </extension>
   </sections>
 </config>
