@@ -1,0 +1,41 @@
+<?php if ($this->isEnabled()): 
+
+$orderId = Mage::getSingleton('checkout/session')->getLastOrderId();
+
+$helper = Mage::helper('extension');
+$jsData = $helper->getOrderData($orderId);
+$orderArray = $jsData['orderdata'];
+$productsArray = $jsData['products'];
+
+?>
+
+   <script>
+var products = [];
+<?php foreach($productsArray as $productValue){?>
+/*Iterate over the purchase items and push them in the products array*/
+products.push ({
+'product_id' :'<?php echo $productValue['product_id']; ?>', /* REQUIRED: Unique Product ID*/
+'price' :'<?php echo $productValue['price']; ?>', /* REQUIRED: Product Price*/
+'quantity' : '<?php echo $productValue['quantity']; ?>',  /* REQUIRED: Quantity Bought*/
+'title': '<?php echo $productValue['title']; ?>',  /* REQUIRED: Title of the product*/
+'url':'<?php echo $productValue['url']; ?>',/* OPTIONAL: URL of the product page*/
+'img_url':'<?php echo $productValue['img_url']; ?>', /* OPTIONAL: URL of the product image*/
+	'category':'<?php echo $productValue['category']; ?>',/*OPTIONAL: Internal Product Category*/
+	'tags':'<?php  $productValue['tags']; ?>',/*OPTIONAL: Internal Product Tags*/
+	})
+/*End iteration*/
+<?php }?>
+var order_data =
+{
+'order_id' : '<?php  echo $orderArray['order_id'] ; ?>',/*REQUIRED: Internal Order ID */
+'total' : '<?php  echo $orderArray['total']; ?>',/*REQUIRED: Total order value*/
+'subtotal' : '<?php  echo $orderArray['subtotal']; ?>',/*REQUIRED: Order value without shipping, taxes etc.*/
+'coupon_code' : '<?php echo $orderArray['discount_code']; ?>',/*OPTIONAL: Coupon code used*/
+'currency': '<?php  echo $orderArray['currency_code']; ?>' , /*OPTIONAL: 3 letter currency code for your store.Defaults to USD*/
+'products' : products/*OPTIONAL- Array of products bought*/
+}
+_zrl.push([ 'track_order' , order_data ] );
+</script>
+
+
+<?php endif; ?>

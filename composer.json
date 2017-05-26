@@ -1,0 +1,182 @@
+{
+  "package": {
+    "name": "Zinrelo_Extension",
+    "version": "1.0.0",
+    "stability": "stable",
+    "license": {
+      "-uri": " https://opensource.org/licenses/osl-3.0.php",
+      "#text": "Open Software License version 3.0"
+    },
+    "channel": "community",
+    "summary": "Zinrelo Tracker will be giving the customer rewards points ",
+    "description": "Zinrelo is a modern-day, enterprise-grade loyalty rewards program, helping to maximize per-customer revenue through 360-degree customer engagement. It supports omni-channel interactions including desktop web, mobile web, mobile apps and in-store engagements.",
+    "notes": "Stable release
+https://app.zinrelo.com site.",
+    "authors": {
+      "author": {
+        "name": "Zinrelo",
+        "user": "dev",
+        "email": "dev@zinrelo.com"
+      }
+    },
+    "date": "2017-05-18",
+    "time": "12:00:22",
+    "contents": {
+      "target": [
+        {
+          "-name": "magecommunity",
+          "dir": {
+            "-name": "Zinrelo",
+            "dir": {
+              "-name": "Extension",
+              "dir": [
+                {
+                  "-name": "Block",
+                  "dir": {
+                    "-name": "Adminhtml",
+                    "dir": {
+                      "-name": "System",
+                      "dir": {
+                        "-name": "Config",
+                        "file": {
+                          "-name": "Button.php",
+                          "-hash": "d49dfdc3636a5072f1fcf808083e6bb4"
+                        }
+                      }
+                    }
+                  },
+                  "file": [
+                    {
+                      "-name": "Jsintegration.php",
+                      "-hash": "9309f78385b420cc2f48f6e316098050"
+                    },
+                    {
+                      "-name": "Successsnippet.php",
+                      "-hash": "f838f680cd396a0d647755da045a777e"
+                    }
+                  ]
+                },
+                {
+                  "-name": "Helper",
+                  "file": {
+                    "-name": "Data.php",
+                    "-hash": "f4047ed9f2912d01e7a58131cc04f81f"
+                  }
+                },
+                {
+                  "-name": "etc",
+                  "file": [
+                    {
+                      "-name": "adminhtml.xml",
+                      "-hash": "93eeaedf5ba0e3ef34cd219ddb9e0527"
+                    },
+                    {
+                      "-name": "config.xml",
+                      "-hash": "3a2c6afadad92295ba85734d8c202ced"
+                    },
+                    {
+                      "-name": "system.xml",
+                      "-hash": "251fcf30ab52e17809de801e013ec4a3"
+                    }
+                  ]
+                },
+                {
+                  "-name": "sql",
+                  "dir": {
+                    "-name": "extension_setup",
+                    "file": {
+                      "-name": "mysql4-install-1.0.0.php",
+                      "-hash": "f92462a3625da413e6082bc00c5941d2"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "-name": "mageetc",
+          "dir": {
+            "-name": "modules",
+            "file": {
+              "-name": "Zinrelo_Extension.xml",
+              "-hash": "0f5b957c2e451e02653be8e2957e24cd"
+            }
+          }
+        },
+        {
+          "-name": "magedesign",
+          "dir": [
+            {
+              "-name": "adminhtml",
+              "dir": {
+                "-name": "default",
+                "dir": {
+                  "-name": "default",
+                  "dir": {
+                    "-name": "template",
+                    "dir": {
+                      "-name": "extension",
+                      "dir": {
+                        "-name": "system",
+                        "dir": {
+                          "-name": "config",
+                          "file": {
+                            "-name": "button.phtml",
+                            "-hash": "cbe2c5ba14d837f334828ec216d8b68b"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "-name": "frontend",
+              "dir": {
+                "-name": "base",
+                "dir": {
+                  "-name": "default",
+                  "dir": [
+                    {
+                      "-name": "layout",
+                      "file": {
+                        "-name": "extension.xml",
+                        "-hash": "5c59329b841155554df817f51f8f4627"
+                      }
+                    },
+                    {
+                      "-name": "template",
+                      "dir": {
+                        "-name": "extension",
+                        "file": [
+                          {
+                            "-name": "jsintegration.phtml",
+                            "-hash": "171e23284ba55ea50efb10ffe92f161b"
+                          },
+                          {
+                            "-name": "successsnippet.phtml",
+                            "-hash": "450235fa7a8dffcbb76bd01ed993f11c"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dependencies": {
+      "required": {
+        "php": {
+          "min": "5.2.0",
+          "max": "7.0.2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/gpl-license
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@Zinrelo.com so we can send you a copy immediately.
+ *
+ * @category   Zinrelo
+ * @package    Zinrelo_Extension
+ * @copyright  Copyright (c) 2017 Zinrelo.
+ * @license    http://opensource.org/licenses/gpl-license GNU General Public License
+ */
+-->
+<config>
+  <tabs>
+    <zinrelo_extension translate="label" module="extension">
+      <label>zinrelo extension</label>
+      <sort_order>301</sort_order>
+    </zinrelo_extension>
+  </tabs>
+  <sections>
+    <extension  translate="label" module="extension">
+      <label>Settings</label>
+      <tab>zinrelo_extension</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>1</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>1</show_in_website>
+      <show_in_store>1</show_in_store>
+      <groups>
+        <extension_settings translate="label">
+          <label>Zinrelo Settings</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>1</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+			 <extension_partner_id translate="label">
+              <label>Partner ID</label>
+              <frontend_type>text</frontend_type>
+			  <depends>
+                <extension_active>1</extension_active>
+              </depends>
+              <sort_order>4</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </extension_partner_id>
+            <extension_active translate="label">
+              <label>Enabled</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>1</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </extension_active>	
+			<data_extension translate="label">
+              <label>Register store with Zinrelo</label>
+              <frontend_type>button</frontend_type>
+              <frontend_model>extension/adminhtml_system_config_button</frontend_model>
+              <sort_order>12</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <comment>
+                <![CDATA[Click on this button to complete the rest of the program setup.]]>
+			  </comment>
+						</data_extension>			
+          </fields>
+        </extension_settings>
+      </groups>
+    </extension>
+  </sections>
+</config>

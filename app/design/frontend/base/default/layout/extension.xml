@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/gpl-license
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zinrelo.com so we can send you a copy immediately.
+ *
+ * @category   Zinrelo
+ * @package    Zinrelo_Extension
+ * @copyright  Copyright (c) 2017 Zinrelo.
+ * @license    http://opensource.org/licenses/gpl-license GNU General Public License
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+		<block type="extension/jsintegration" name="extension_integration" template="extension/jsintegration.phtml" before="extension_js"/>
+            <block type="core/text" name="extension_js">
+                <action method="setText"  ifconfig="extension/extension_settings/extension_active" ifvalue="1">
+                    <text>
+                        <![CDATA[<script src = "//cdn.zinrelo.com/js/all.js" type="text/javascript"></script>]]>
+                    </text>
+                </action>
+            </block>
+        </reference>
+		<reference name="before_body_end">
+           
+            <block type="extension/successsnippet" name="extension_successsnippet" template="extension/successsnippet.phtml" after="extension_js"/>
+        </reference>
+    </default>
+
+  <checkout_onepage_success>
+        <reference name="before_body_end">
+            <block type="extension/successsnippet" name="extension_successsnippet" template="extension/successsnippet.phtml" after="extension_js"/>
+        </reference>
+    </checkout_onepage_success>
+
+    <checkout_multishipping_success>
+        <reference name="before_body_end">
+            <block type="extension/successsnippet" name="extension_successsnippet" template="extension/successsnippet.phtml" after="extension_js"/>
+        </reference>
+    </checkout_multishipping_success>
+</layout>

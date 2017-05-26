@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	//<![CDATA[
+
+	function sendData() {
+		if("<?php echo Mage::app()->getRequest()->getParam('store', 0); ?>" == 0){
+			alert("Please select the store from 'Current Configuration Scope:' dropdown on the left.");
+			return false;
+		}
+		parameters = {
+					"partner_id" : "<?php echo Mage::getStoreConfig('extension/extension_settings/extension_partner_id'); ?>",
+					"store_url" : "<?php echo Mage::app()->getStore()->getUrl(); ?>",
+					"store_name" : "<?php echo Mage::app()->getStore()->getCode(); ?>",
+					"store_currency" : "<?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?>",
+					"store_signup_url " : "<?php echo Mage::app()->getStore()->getUrl('customer/account/create') ?>",
+					"store_login_url" : "<?php echo Mage::app()->getStore()->getUrl('customer/account/login'); ?>",
+			};
+	var extUrl = "https://app.zinrelo.com/store/magento/";
+    var str = Object.keys(parameters).map(function(key){ 
+    return encodeURIComponent(key) + '=' + encodeURIComponent(parameters[key]); 
+    }).join('&');   
+     window.open(extUrl+"?"+str,"_blank");
+	}
+	//]]>
+</script>
+
+<?php echo $this->getButtonHtml(); ?>

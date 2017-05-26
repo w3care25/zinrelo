@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU General Public License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/gpl-license
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zinrelo.com so we can send you a copy immediately.
+ *
+ * @category   Zinrelo
+ * @package    Zinrelo_Extension
+ * @copyright  Copyright (c) 2017 Zinrelo.
+ * @license    http://opensource.org/licenses/gpl-license GNU General Public License
+ */
+-->
+<config>
+  <modules>
+    <Zinrelo_Extension>
+      <version>1.0.0</version>
+    </Zinrelo_Extension>
+  </modules>
+  <global>
+    <helpers>
+      <extension>
+        <class>Zinrelo_Extension_Helper</class>
+      </extension>
+    </helpers>
+		<blocks>
+			<extension>
+				<class>Zinrelo_Extension_Block</class>
+			</extension>
+		</blocks>
+		<resources>
+			<extension_setup>
+				<setup>
+					<module>Zinrelo_Extension</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</extension_setup>
+	  	<extension_write>
+				<connection>
+		  		<use>core_write</use>
+				</connection>
+	  	</extension_write>
+	  	<extension_read>
+				<connection>
+		  		<use>core_read</use>
+				</connection>
+	  	</extension_read>
+		</resources>
+  </global>
+	<frontend>
+		<routers>
+			<extension>
+				<use>standard</use>
+				<args>
+					<module>Zinrelo_Extension</module>
+					<frontName>extension</frontName>
+				</args>
+			</extension>
+		</routers>
+		<layout>
+			<updates>
+				<extension>
+					<file>extension.xml</file>
+				</extension>
+			</updates>
+		</layout>
+	</frontend>
+</config> 

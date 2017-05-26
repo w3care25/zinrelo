@@ -1,0 +1,59 @@
+<?php
+/*
+* Magento
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Open Software License version 3.0
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* https://opensource.org/licenses/osl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@zinrelo.com so we can send you a copy immediately.
+*
+* @category  Zinrelo
+* @package   Zinrelo_Extension
+* @copyright Copyright (c) 2017 Zinrelo, Inc.
+* @license   https://opensource.org/licenses/osl-3.0.php Open Software License version 3.0
+*/
+
+/**
+
+* @category Zinrelo
+* @package  Zinrelo_Extension
+* @author   Zinrelo Developer <dev@zinrelo.com>
+*/
+  if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+	$sessionCustomer = Mage::getSingleton("customer/session");
+
+ }
+?>
+<?php if ($this->isEnabled()): ?>
+
+   <script>
+window._zrl  =  window._zrl || [];
+var init_data =
+{
+	'partner_id' : "<?php if(Mage::getStoreConfig('extension/extension_settings/extension_partner_id')){ echo Mage::getStoreConfig('extension/extension_settings/extension_partner_id');
+	}else{
+	}?>", /*REQUIRED: Zinrelo Partner ID*/
+	
+	'email' : "<?php if(Mage::getSingleton('customer/session')->isLoggedIn()) {echo $sessionCustomer->getCustomer()->getEmail();}
+	?>", /*REQUIRED: When User is Logged in.
+				     For Non-Logged in users, pass an empty string ('')*/
+	'name' : "<?php if(Mage::getSingleton('customer/session')->isLoggedIn()) {echo $sessionCustomer->getCustomer()->getName();}
+	?>",	/*REQUIRED: When User is Logged in.
+For Non-Logged in users, pass an empty string ('')*/
+	'user_id': "<?php if(Mage::getSingleton('customer/session')->isLoggedIn()) { echo $sessionCustomer->getCustomer()->getId();}
+	?>",	/*REQUIRED: When User is Logged in.
+For Non-Logged in users and guest users who DO NOT have an account, pass an empty string ('')*/
+
+	'access_token': "<?php if(Mage::getSingleton('customer/session')->isLoggedIn()) {echo $sessionCustomer->getSessionId();}?>"	/*REQUIRED: When User is Logged in.
+Must be unique for a given user session*/
+
+}
+_zrl.push( [ 'init' , init_data ] );
+</script>
+
+<?php endif; ?>
