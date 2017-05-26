@@ -1,7 +1,7 @@
 {
 	"name": "zinrelo/extension",
 	"version": "1.0.0",
-	"stability": "stable",
+	"stability": "beta",
 	"license": "OSL 3.0",
 	"channel": "community",
 	"summary": "Zinrelo Tracker will be giving the customer rewards points ",
