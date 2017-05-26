@@ -24,7 +24,7 @@
 * @package  Zinrelo_Extension
 * @author   Zinrelo Developer <dev@zinrelo.com>
 */
-class Zinrelo_Extension_Block_Adminhtml_System_Config_Button extends Mage_Adminhtml_Block_System_Config_Form_Field
+class Zinrelo_Tracker_Block_Adminhtml_System_Config_Button extends Mage_Adminhtml_Block_System_Config_Form_Field
 {
   /**
    * Set template

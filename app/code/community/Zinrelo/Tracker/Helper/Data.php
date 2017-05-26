@@ -24,7 +24,7 @@
 * @package  Zinrelo_Extension
 * @author   Zinrelo Developer <dev@zinrelo.com>
 */
-class Zinrelo_Extension_Helper_Data extends Mage_Core_Helper_Abstract {
+class Zinrelo_Tracker_Helper_Data extends Mage_Core_Helper_Abstract {
 	
   	    public function getOrderData($orderId){
 

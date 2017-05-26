@@ -1,6 +1,6 @@
 {
-	"name": "zinrelo/extension",
-	"type": "magento1extension",
+	"name": "zinrelo/tracker",
+	"type": "magento1tracker",
 	"version": "1.0.0",
 	"license": "OSL 3.0",
 	"channel": "community",
