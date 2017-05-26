@@ -1,6 +1,7 @@
 {
 	"name": "w3care25/zinrelo",
 	"type": "magento1tracker",
+	"minimum-stability":"dev",
 	"version": "1.0.0",
 	"license": "OSL 3.0",
 	"channel": "community",
