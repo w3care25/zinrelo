@@ -1,6 +1,6 @@
 {
 	"name": "zinrelo/extension",
-	"type": "magento 1 extension",
+	"type": "magento1extension",
 	"version": "1.0.0",
 	"license": "OSL 3.0",
 	"channel": "community",
